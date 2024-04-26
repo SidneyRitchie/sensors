@@ -16,9 +16,9 @@ try:
 		soil_moisture = get_soil_moisture()
 
 		if(not soil_moisture):
-			soil_moisture = "Trocken"
+			soil_moisture_text = "Trocken"
 		else:
-			soil_moisture = "Feucht"
+			soil_moisture_text = "Feucht"
 
 		print("-------------------------")
 		print("| {0} |".format(datetime.now().strftime("%Y.%m.%d - %H:%M:%S")))
@@ -26,7 +26,7 @@ try:
 		print("Temperatur = {0:0.1f}°C".format(temperature))
 		print("Luftfeuchtigkeit = {0:0.1f}%".format(humidity))
 		print("Lichtstärke = {0:.2f}lux".format(light_level))
-		print("Bodenfeuchtigkeit = {0}".format(soil_moisture))
+		print("Bodenfeuchtigkeit = {0}".format(soil_moisture_text))
 		print("")
 
 		log(temperature,humidity,soil_moisture,light_level)
