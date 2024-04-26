@@ -13,7 +13,7 @@ def log(temperature, humidity, soil_moisture, light_level):
     print("{0},{1},{2},{3}".format(temperature, humidity, soil_moisture, light_level))
 
     # überprüfen, ob ordner für das jahr existiert
-    if os.path.isdir("../data/" + year):
+    if os.path.isdir("data/" + year):
         print("dir gibt es")
     else:
         print("dir gibt es nicht")
