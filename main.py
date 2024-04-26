@@ -5,6 +5,8 @@ from sensors.humidity_temperature import get_humidity, get_temperature
 from sensors.soil_moisture import get_soil_moisture
 from sensors.light import get_light_level
 
+from lib.logger import log
+
 try:
 	while True:
 
@@ -26,6 +28,8 @@ try:
 		print("Lichtstärke = {0:.2f}lux".format(light_level))
 		print("Bodenfeuchtigkeit = {0}".format(soil_moisture))
 		print("")
+
+		log(temperature,humidity,soil_moisture,light_level)
 
 		sleep(10)
 
