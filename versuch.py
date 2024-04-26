@@ -1,9 +1,9 @@
 import smbus # type: ignore
 import time
-from gpiozero import DigitalInputDevice # type: ignore
 from datetime import datetime
 
-from sensors.humidity_temperature import getHumidity, getTemperature
+from sensors.humidity_temperature import get_humidity, get_temperature
+from sensors.soil_moisture import get_soil_moisture
 
 DEVICE = 0x23
 POWER_DOWN = 0x00
@@ -17,7 +17,6 @@ ONE_TIME_HIGH_RES_MODE_2 = 0x21
 ONE_TIME_LOW_RES_MODE = 0x23
 
 bus = smbus.SMBus(1)
-d0_input = DigitalInputDevice(17)
 
 def convertToNumber(data):
 	result=(data[1] + (256 * data[0])) / 1.2
@@ -32,13 +31,14 @@ try:
 	while True:
 # Licht wie stark
 		lightLevel = readLight()
-		humidity = getHumidity()
-		temperature = getTemperature()
-# Boden Feuch?
-		if (not d0_input.value):
-			feucht = "Regenwald"
+		humidity = get_humidity()
+		temperature = get_temperature()
+		soil_moisture = get_soil_moisture()
+
+		if(not soil_moisture):
+			soil_moisture = "Trocken"
 		else:
-			feucht = "Wüste"
+			soil_moisture = "Feucht"
 
 		print("-------------------------")
 		print("| {0} |".format(datetime.now().strftime("%Y.%m.%d - %H:%M:%S")))
@@ -46,7 +46,7 @@ try:
 		print("Temperatur = {0:0.1f}°C".format(temperature))
 		print("Luftfeuchtigkeit = {0:0.1f}%".format(humidity))
 		print("Lichtstärke = {0:.2f}lux".format(lightLevel))
-		print("Bodenfeuchtigkeit = {0}".format(feucht))
+		print("Bodenfeuchtigkeit = {0}".format(soil_moisture))
 		print("")
 
 		time.sleep(10)
