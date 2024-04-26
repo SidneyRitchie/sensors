@@ -13,10 +13,15 @@ def log(temperature, humidity, soil_moisture, light_level):
     print("{0},{1},{2},{3}".format(temperature, humidity, soil_moisture, light_level))
 
     # überprüfen, ob ordner für das jahr existiert
-    if os.path.isdir("data/" + year):
-        print("dir gibt es")
-    else:
-        print("dir gibt es nicht")
+    if not os.path.isdir("data/" + year):
+        os.mkdir("data/" + year)
 
     # überprüfen, ob ordner für den monat existiert
+    if not os.path.isdir("data/" + year + "/" + month):
+        os.mkdir("data/" + year + "/" + month)
+
     # überprüfen, ob es eine csv datei von heute gibt
+    if not os.path.isfile("data/" + year + "/" + month + "/" + year + "_" + month + "_" + day):
+        print("datei existiert")
+        # falls ja: sensordaten ans ende schreiben
+        # falls nein: csv datei erstellen und daten ans ende schreiben
