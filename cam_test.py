@@ -3,7 +3,7 @@ import datetime
 
 camera = PiCamera()
 
-camera.capture('test + %Y %M %d %h %m %s.jpg')
+camera.capture('test.jpg')
 
 
 
