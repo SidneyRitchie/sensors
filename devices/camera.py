@@ -1,5 +1,4 @@
 from picamera import PiCamera # type: ignore
-from time import sleep
 
 def take_picture(filename):
 
