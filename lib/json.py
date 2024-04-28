@@ -36,8 +36,6 @@ def append_row(filename, data):
     else:
         new_data:list = [original_data, data]
 
-    print(new_data)
-
     with open(filename, "w") as jsonfile:
         json.dump(new_data, jsonfile)
        
