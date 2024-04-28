@@ -13,13 +13,15 @@ ONE_TIME_LOW_RES_MODE = 0x23
 
 bus = smbus.SMBus(1)
 
-def convertToNumber(data):
+def convert_to_number(data):
 	result=(data[1] + (256 * data[0])) / 1.2
 	return result
 
-def readLight(addr=DEVICE):
+
+def read_light(addr=DEVICE):
 	data = bus.read_i2c_block_data(addr, ONE_TIME_HIGH_RES_MODE_1)
-	return convertToNumber(data)
+	return convert_to_number(data)
+
 
 def get_light_level():
-	return readLight()
+	return read_light()

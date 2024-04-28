@@ -8,6 +8,7 @@ from sensors.light import get_light_level
 from lib.logger import log
 
 try:
+	
 	while True:
 
 		light_level = get_light_level()
