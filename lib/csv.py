@@ -1,6 +1,6 @@
 import csv
 
-def write_to_file(filename, fieldnames, data):
+def write_csv_file(filename, fieldnames, data):
 
     if not file_exists(filename):
         create_file(filename, fieldnames)
