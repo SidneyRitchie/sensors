@@ -2,8 +2,6 @@ from picamera import PiCamera # type: ignore
 from datetime import datetime
 from time import sleep
 
-camera = PiCamera()
-
 def take_camera_picture():
     
     year = datetime.now().strftime("%Y")
