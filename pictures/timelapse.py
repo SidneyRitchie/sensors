@@ -5,7 +5,7 @@ from datetime import datetime
 
 camera = PiCamera()
 
-def get_camera_image():
+def take_camera_picture():
     
     year = datetime.now().strftime("%Y")
     month = datetime.now().strftime("%m")
@@ -15,3 +15,5 @@ def get_camera_image():
 
     with PiCamera() as camera:
             camera.capture("pictures/"+year+"/"+month+"/"+year+"-"+month+"-"+day+"-"+hour+"-"+minute+".jpg")
+            camera.stop_preview()
+            camera.close() 

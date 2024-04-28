@@ -6,7 +6,7 @@ from sensors.soil_moisture import get_soil_moisture
 from sensors.light import get_light_level
 
 from lib.logger import log
-from pictures.timelapse import get_camera_image
+from pictures.timelapse import take_camera_picture
 
 try:
 	while True:
@@ -31,7 +31,8 @@ try:
 		print("")
 
 		log(temperature,humidity,soil_moisture,light_level)
-		get_camera_image()
+		take_camera_picture()
+
 
 		sleep(10)
 
