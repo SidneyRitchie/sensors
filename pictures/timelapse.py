@@ -11,5 +11,5 @@ def take_camera_picture():
     minute = datetime.now().strftime("%m")
 
     with PiCamera() as camera:
-            camera.capture('pictures/"+year+"/"+month+"/"+year+"-"+month+"-"+day+"-"+hour+"-"+minute+".jpg')
+            camera.capture("pictures/"+year+"/"+month+"/"+year+"-"+month+"-"+day+"-"+hour+"-"+minute+".jpg")
             camera.close() 
