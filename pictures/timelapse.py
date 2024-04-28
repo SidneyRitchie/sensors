@@ -1,5 +1,6 @@
 from picamera import PiCamera # type: ignore
 from datetime import datetime
+from time import sleep
 
 camera = PiCamera()
 
