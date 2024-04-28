@@ -34,7 +34,7 @@ try:
 		take_camera_picture()
 
 
-		sleep(10)
+		sleep(30)
 
 except KeyboardInterrupt:
 	print("Script end!")
