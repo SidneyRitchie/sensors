@@ -29,3 +29,9 @@ def check_directories(year, month):
 
     if not os.path.isdir("data/" + year + "/" + month):
         os.mkdir("data/" + year + "/" + month)
+    
+    if not os.path.isdir("pictures/" + year):
+        os.mkdir("pictures/" + year)
+
+    if not os.path.isdir("pictures/" + year + "/" + month):
+        os.mkdir("pictures/" + year + "/" + month)
