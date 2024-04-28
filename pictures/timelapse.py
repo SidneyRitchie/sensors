@@ -1,7 +1,5 @@
-import os
 from picamera import PiCamera # type: ignore
 from datetime import datetime
-
 
 camera = PiCamera()
 
@@ -14,6 +12,7 @@ def take_camera_picture():
     minute = datetime.now().strftime("%m")
 
     with PiCamera() as camera:
-            camera.capture("pictures/"+year+"/"+month+"/"+year+"-"+month+"-"+day+"-"+hour+"-"+minute+".jpg")
+            camera.capture("0000")
+            # camera.capture("pictures/"+year+"/"+month+"/"+year+"-"+month+"-"+day+"-"+hour+"-"+minute+".jpg")
             camera.stop_preview()
             camera.close() 
