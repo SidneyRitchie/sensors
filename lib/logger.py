@@ -45,4 +45,4 @@ def check_directories(base_path):
 def create_directory_if_not_exists(path):
 
     if not os.path.isdir(path):
-        os.mkdir(path)
+        os.makedirs(path)

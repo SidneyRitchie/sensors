@@ -1,5 +1,5 @@
-from lib.json import write_json_file
 from datetime import datetime
+from lib.json import write_json_file
 
 data = {
     "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
