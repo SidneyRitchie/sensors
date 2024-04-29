@@ -33,3 +33,4 @@ def append_row(filename, fieldnames, data):
     with open(filename, 'a', newline="") as csvfile:
         writer = csv.DictWriter(csvfile, delimiter=DELIMITER, quotechar=QUOTECHAR, quoting=QUOTING, fieldnames=fieldnames)
         writer.writerow(data)
+        

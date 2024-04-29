@@ -4,4 +4,4 @@ def take_picture(filename):
 
     with PiCamera() as camera:
         camera.capture(filename)
-        camera.close() 
+        camera.close()
