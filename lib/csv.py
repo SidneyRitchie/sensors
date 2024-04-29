@@ -1,5 +1,9 @@
 import csv
 
+DELIMITER = ","
+QUOTECHAR = "|"
+QUOTING = csv.QUOTE_MINIMAL
+
 def write_csv_file(filename, fieldnames, data):
 
     if not file_exists(filename):
@@ -20,12 +24,12 @@ def file_exists(filename):
 def create_file_and_write_header(filename, fieldnames):
 
     with open(filename, 'w', newline="") as csvfile:
-        writer = csv.DictWriter(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, fieldnames=fieldnames)
+        writer = csv.DictWriter(csvfile, delimiter=DELIMITER, quotechar=QUOTECHAR, quoting=QUOTING, fieldnames=fieldnames)
         writer.writeheader()
 
 
 def append_row(filename, fieldnames, data):
     
     with open(filename, 'a', newline="") as csvfile:
-        writer = csv.DictWriter(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, fieldnames=fieldnames)
+        writer = csv.DictWriter(csvfile, delimiter=DELIMITER, quotechar=QUOTECHAR, quoting=QUOTING, fieldnames=fieldnames)
         writer.writerow(data)
