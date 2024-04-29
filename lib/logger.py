@@ -5,7 +5,7 @@ from lib.csv import write_csv_file
 from lib.json import write_json_file
 from devices.camera import take_picture
 
-FIELDNAMES = ["time","temperature", "humidity", "soil_moisture", "light_level"]
+FIELDNAMES = ["time", "temperature", "humidity", "soil_moisture", "light_level"]
 
 def log(temperature, humidity, soil_moisture, light_level):
 
@@ -36,13 +36,13 @@ def check_directories(year, month):
 
     base_path = f"data/{year}/{month}"
     
-    create_directory(base_path)
-    create_directory(f"{base_path}/images")
-    create_directory(f"{base_path}/csv")
-    create_directory(f"{base_path}/json")
+    create_directory_if_not_exists(base_path)
+    create_directory_if_not_exists(f"{base_path}/images")
+    create_directory_if_not_exists(f"{base_path}/csv")
+    create_directory_if_not_exists(f"{base_path}/json")
 
 
-def create_directory(path):
+def create_directory_if_not_exists(path):
 
     if not os.path.isdir(path):
         os.mkdir(path)
