@@ -3,7 +3,7 @@ import csv
 def write_csv_file(filename, fieldnames, data):
 
     if not file_exists(filename):
-        create_file(filename, fieldnames)
+        create_file_and_write_header(filename, fieldnames)
 
     append_row(filename, fieldnames, data)
 
@@ -17,7 +17,7 @@ def file_exists(filename):
             return False
 
 
-def create_file(filename, fieldnames):
+def create_file_and_write_header(filename, fieldnames):
 
     with open(filename, 'w', newline="") as csvfile:
         writer = csv.DictWriter(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, fieldnames=fieldnames)
