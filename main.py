@@ -24,7 +24,7 @@ try:
 		print("-------------------------")
 		print("| {0} |".format(datetime.now().strftime("%Y.%m.%d - %H:%M:%S")))
 		print("-------------------------")
-		print("Temperatur = {0:0.1f}°C".format(temperature))
+		print("Temperatur = {0:0.1f}C".format(temperature))
 		print("Luftfeuchtigkeit = {0:0.1f}%".format(humidity))
 		print("Lichtstärke = {0:.2f}lux".format(light_level))
 		print("Bodenfeuchtigkeit = {0}".format(soil_moisture_text))
