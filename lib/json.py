@@ -20,7 +20,7 @@ def file_exists(filename):
 def create_file(filename, data):
 
     with open(filename, "w") as jsonfile:
-        json.dump(data, jsonfile)
+        json.dump([data], jsonfile)
 
 
 def read_file(filename):
@@ -31,13 +31,9 @@ def read_file(filename):
 
 def append_row(filename, data):
     
-    original_data = read_file(filename)
-
-    if isinstance(original_data, list):
-        new_data:list = original_data.copy()
-        new_data.append(data)
-    else:
-        new_data:list = [original_data, data]
+    original_data:list = read_file(filename)
+    new_data:list = original_data.copy()
+    new_data.append(data)
 
     with open(filename, "w") as jsonfile:
         json.dump(new_data, jsonfile)
