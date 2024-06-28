@@ -21,8 +21,11 @@ try:
 		else:
 			soil_moisture_text = "Feucht"
 
+
+
 		log(temperature,humidity,soil_moisture,light_level)
 
 		sleep(30)
 
-
+except KeyboardInterrupt:
+	print("Script end!")
