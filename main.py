@@ -8,15 +8,20 @@ from sensors.light import get_light_level
 from lib.logger import log
 
 	
+while True:
 
-light_level = get_light_level()
-humidity = get_humidity()
-temperature = get_temperature()
-soil_moisture = get_soil_moisture()
+	light_level = get_light_level()
+	humidity = get_humidity()
+	temperature = get_temperature()
+	soil_moisture = get_soil_moisture()
 
-if(not soil_moisture):
-	soil_moisture_text = "Trocken"
-else:
-	soil_moisture_text = "Feucht"
-log(temperature,humidity,soil_moisture,light_level)
-sleep(30)
+	if(not soil_moisture):
+		soil_moisture_text = "Trocken"
+	else:
+		soil_moisture_text = "Feucht"
+
+		
+
+	log(temperature,humidity,soil_moisture,light_level)
+
+	sleep(30)
