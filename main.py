@@ -23,5 +23,3 @@ while True:
 		
 
 	log(temperature,humidity,soil_moisture,light_level)
-
-	sleep(30)
