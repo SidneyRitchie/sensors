@@ -18,5 +18,5 @@ if(not soil_moisture):
 	soil_moisture_text = "Trocken"
 else:
 	soil_moisture_text = "Feucht"
-	log(temperature,humidity,soil_moisture,light_level)
-	sleep(30)
+log(temperature,humidity,soil_moisture,light_level)
+sleep(30)
